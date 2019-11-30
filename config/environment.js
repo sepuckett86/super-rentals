@@ -23,7 +23,7 @@ module.exports = function(environment) {
     }
   };
 
-  if (environment === 'development') {
+  if(environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -31,7 +31,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
-  if (environment === 'test') {
+  if(environment === 'test') {
     // Testem prefers this...
     ENV.locationType = 'none';
 
@@ -43,9 +43,11 @@ module.exports = function(environment) {
     ENV.APP.autoboot = false;
   }
 
-  if (environment === 'production') {
+  if(environment === 'production') {
     // here you can enable a production-specific feature
   }
+
+  ENV.MAPBOX_ACCESS_TOKEN = 'pk.eyJ1Ijoic2VwdWNrZXR0ODYiLCJhIjoiY2szZXFiYW1tMDB6ZjNubHN4dDBuaXpteiJ9.ekuk9szhOc4z0mLmdFXx7A';
 
   return ENV;
 };

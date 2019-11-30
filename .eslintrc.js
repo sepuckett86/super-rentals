@@ -13,9 +13,75 @@ module.exports = {
     'plugin:ember/recommended'
   ],
   env: {
-    browser: true
+    browser: true,
+    es6: true,
   },
   rules: {
+    'eqeqeq': ['error', 'always'],
+    'no-console': 'warn',
+    'indent': [
+      'error',
+      2,
+      {
+        'SwitchCase': 1,
+        'ignoreComments': true
+      }
+    ],
+    'quotes': [
+      'error',
+      'single',
+      {
+        'avoidEscape': true,
+        'allowTemplateLiterals': true
+      }
+    ],
+    'no-multi-spaces': [
+      'error',
+      {
+        'ignoreEOLComments': true
+      }
+    ],
+    'new-cap': 'error',
+    'no-redeclare': [
+      'error',
+      {
+        'builtinGlobals': true
+      }
+    ],
+    'semi': ['error', 'always'],
+    'space-in-parens': ['error'],
+    'space-infix-ops': 'error',
+    'object-curly-spacing': ['error', 'always'],
+    'comma-spacing': 'error',
+    'space-before-function-paren': ['error', 'never'],
+    'keyword-spacing': [
+      'error',
+      {
+        'before': true,
+        'after': true,
+        'overrides': {
+          'if': {
+            'after': false
+          },
+          'for': {
+            'after': false
+          },
+          'while': {
+            'after': false
+          },
+          'do': {
+            'after': false
+          },
+          'switch': {
+            'after': false
+          },
+          'catch': {
+            'after': false
+          }
+        }
+      }
+    ],
+    'array-bracket-spacing': 'error'
   },
   overrides: [
     // node files
@@ -49,10 +115,7 @@ module.exports = {
         // this can be removed once the following is fixed
         // https://github.com/mysticatea/eslint-plugin-node/issues/77
         'node/no-unpublished-require': 'off'
-      }),
-      extends: [
-        'plugin:node/recommended'
-      ],
+      })
     }
   ]
 };
